@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f2f2f2; 
+    background-image: url("default.avif"); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.header {
+    background: linear-gradient(to right, #87CEEB, #1e90ff, #4682B4); 
+    padding: 5px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+
+.brand-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; 
+}
+
+.brand-name img {
+    width: 255px;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.navbar .logo img {
+    width: 55px;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar nav ul li {
+    margin-right: 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #ff523b;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    overflow: hidden; 
+}
+
+.weather-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.weather-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    padding: 29px;
+    background-color: rgba(255, 255, 255, 0.5); /* Increased transparency */
+    backdrop-filter: blur(5px); /* Blur effect */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-input-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.location-form {
+    display: flex;
+    align-items: center;
+}
+
+#location-input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 70%;
+}
+
+#location-input::placeholder {
+    color: #ccc;
+}
+
+#location-input:focus {
+    outline: none;
+    border-color: #1E90FF;
+}
+
+.location-form button {
+    padding: 10px 20px;
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.location-form button:hover {
+    background-color: #4682B4;
+}
+
+/* Weather details container */
+.weather-details-container {
+    flex: 1;
+    text-align: left;
+    padding-left: 20px; /* Separate weather details from input */
+}
+
+.weather-details {
+    text-align: left;
+}
+
+.weather-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.weather-details p {
+    margin-bottom: 5px;
+    color: #050303;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #020c26;
+    color: #013a77;
+    padding: 1px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+}
+
+.copyright {
+    margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .navbar nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .navbar .menu-icon {
+        display: block;
+        cursor: pointer;
+        margin-right: 20px;
+        width: 30px; /* Adjust width */
+        height: 30px; /* Adjust height */
+    }
+
+    .navbar .logo img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .navbar .brand-name {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar .active {
+        background-color: #f9d4d4;
+        color: #ff523b;
+    }
+
+    .navbar nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column; /* Stack boxes vertically */
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
+        padding-top: 100px; /* Adjust for smaller screens */
+        height: auto; /* Adjust height */
+        min-height: 100vh; /* Ensure it takes full height of the viewport */
+    }
+
+    .weather-content {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        justify-content: center; /* Center vertically */
+        align-items: center; /* Center horizontally */
+        width: 100%; /* Full width */
+        padding: 20px; /* Adjust padding */
+        max-width: 600px; /* Add a max-width for better readability */
+    }
+
+    .weather-input-container {
+        margin-right: 0;
+        margin-bottom: 20px; /* Add margin below input container */
+        width: 100%; /* Full width */
+    }
+
+    .weather-details-container {
+        padding-left: 0;
+        width: 100%; /* Full width */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .footer {
+        padding: 15px 0;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .navbar nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #fff;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .navbar .menu-icon {
+        display: block;
+        cursor: pointer;
+        margin-right: 20px;
+        width: 30px; /* Adjust width */
+        height: 30px; /* Adjust height */
+    }
+
+    .navbar .logo img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .navbar .brand-name {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar .active {
+        background-color: #f9d4d4;
+        color: #ff523b;
+    }
+
+    .navbar nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .main-content {
+        flex-direction: column; /* Stack boxes vertically */
+        padding-top: 100px; /* Adjust for smaller screens */
+        height: auto; /* Adjust height */
+    }
+
+    .weather-content {
+        flex-direction: column; /* Stack content vertically */
+        width: 100%; /* Full width */
+        padding: 20px; /* Adjust padding */
+    }
+
+    .weather-input-container {
+        margin-right: 0;
+        margin-bottom: 20px; /* Add margin below input container */
+        width: 100%; /* Full width */
+    }
+
+    .weather-details-container {
+        padding-left: 0;
+        width: 100%; /* Full width */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .footer {
+        padding: 15px 0;
+    }
+}

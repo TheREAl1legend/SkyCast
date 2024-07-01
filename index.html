@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#"><img src="logo.png" alt="Logo"></a>
+                </div>
+                <div class="brand-name">
+                  <img src="cst.png" alt="CST Image">
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">Weather</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <img src="menu-icon.png" class="menu-icon" onclick="menutoggle()" alt="Menu Icon">
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="weather-background"></div> 
+        <div class="weather-content">
+            <div class="weather-input-container">
+                <form id="location-form" class="location-form">
+                    <input type="text" id="location-input" placeholder="Enter location.." required>
+                    <button type="submit">Get Weather</button>
+                </form>
+            </div>
+            <div class="weather-details-container">
+                <div class="weather-details">
+                    <h2 id="city">City Name</h2>
+                    <p id="temperature">Temperature: --°C</p>
+                    <p id="weather-description">Weather: --</p>
+                    <p id="humidity">Humidity: --%</p>
+                    <p id="wind-speed">Wind Speed: -- m/s</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="copyright">
+                <p>&copy; 2024 SkyCast. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
